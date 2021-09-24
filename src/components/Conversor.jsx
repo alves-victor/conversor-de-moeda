@@ -7,7 +7,7 @@ const Conversor = (props) => {
 
     function converter(){
         let de_para = `${props.moedaA}_${props.moedaB}`
-        let url = `https://free.currconv.com/api/v7/convert?q=${de_para}&compact=ultra&apiKey=a3244e1b28ec4356defb`
+        let url = `https://free.currconv.com/api/v7/convert?q=${de_para}&compact=ultra&apiKey=${process.env.REACT_APP_CONVERSOR_API_KEY}`
         fetch(url).then(res => {
             return res.json()
         }).then(json => {
